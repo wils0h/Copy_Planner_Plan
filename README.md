@@ -13,7 +13,7 @@ Required PowerShell Modules: MicrosoftTeams & ExchangeOnlineManagement
 ****************************************************************************************
 This script is based on the PlannerMigration.ps1 script created by Github user smbm.
 
-I made significant changes to smbm's script, mainly because that script was meant for copying Plans to Groups in different M365 tenants. In my use case, Plans needeh to be copied to Groups within the same M365 tenant.
+I made significant changes to smbm's script, mainly because that script was meant for copying Plans to Groups in different M365 tenants. In my use case, Plans needed to be copied to Groups within the same M365 tenant.
 Many of the original script's functions relied on array item comparisons in order for the script to proceed, so those had to be modified or removed.
 This script requires the user to input the source Group and destination Group for copying all Plans. Beyond that, the script runs alone without any other input.
 The original script was also missing a few types of Plan data that Graph API can copy to the new destination Plan, so I added as many copier functions as possible.
