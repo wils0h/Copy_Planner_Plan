@@ -3,13 +3,15 @@ A better way to copy M365 Group's Planner Plan(s) than MSFT's built-in Copy Plan
 
 Created by: wils0h
 
-Version 1.02
+Version 1.03
 
-Last Update Date: May 19, 2021
+Last Update Date: May 20, 2021
 
 Language: POWERSHELL
 
 Required PowerShell Modules: MicrosoftTeams & ExchangeOnlineManagement
+
+Requires App Registration in Azure AD and the App Manifest's "allowPublicClient" value must be changed to true.
 ****************************************************************************************
 This script is based on the PlannerMigration.ps1 script created by Github user smbm.
 
@@ -17,6 +19,9 @@ I made significant changes to smbm's script, mainly because that script was mean
 Many of the original script's functions relied on array item comparisons in order for the script to proceed, so those had to be modified or removed.
 This script requires the user to input the source Group and destination Group for copying all Plans. Beyond that, the script runs alone without any other input.
 The original script was also missing a few types of Plan data that Graph API can copy to the new destination Plan, so I added as many copier functions as possible.
+The login method was changed from passing plaintext credentials to the device code login method. It's a little inconvenient but much more secure.  
+
+The script will copy all Plans from the source Group to the destination Group.
 
 This script copies:
 1. Task start and due dates
@@ -31,8 +36,9 @@ This script copies:
 Script limitations:
 1. Checklist items are out of order when there is 1 or more completed checklist item.
 2. Can't copy task attachments.
+3. Can't copy task urgency.
 ****************************************************************************************
 My inspiration for creating this script was my general dissappointment in Microsoft's built-in GUI Plan copying function that does not return task comments, task completion status, checklist item completion status, task assignments, and who completed the task. I think that it is unreasonable that those features were not added when the features are clearly accessible through the Microsoft Graph API.
 
-Last but not least, I believe in freely sharing this kind of time-saving information because you should not have to pay a vendor thousands of dollars for this. Or pay them a lot and not even get this Plan copying solution.
+Last but not least, I believe in freely sharing this kind of time-saving information because you should not have to pay a vendor thousands of dollars for this. Or pay them a lot and not even get this Plan copying solution. 
 ****************************************************************************************
