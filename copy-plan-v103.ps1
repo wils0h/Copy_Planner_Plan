@@ -388,15 +388,6 @@ $sourceGroup = GetUnifiedGroups $onlyToken $groupSourceID
 #   to the GetPlans function. This returns data of each Plan present
 #   within the $sourceGroup.
 $sourcePlans = GetPlans $sourceGroup $onlyToken
-#   Pass the $onlyToken and the previously created $targetGroup paremeters
-#   to the GetPlans function. This return data of each Plan present
-#   within the $targetGroup.
-#   Honestly, this step doesn't really matter because the script will
-#   always copy a Plan from a source group to a target group even if the
-#   same Plan with the same name already exists in the target group.
-#   This is another function that was present in the original script. It is
-#   used for comparison later on, so it exists in order to not throw errors
-#   at that part of the Plan copying process.
 #
 #   The following 2 commands require connecting to the MicrosofTeams
 #   PowerShell module. This function could be accomplished with a Graph
